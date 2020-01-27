@@ -2,6 +2,8 @@ package assignment2;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class ParsareTxt {
 
@@ -13,23 +15,24 @@ public class ParsareTxt {
 
         String[] textArray = text.split(" ");
 
-        Person person =null;
+        
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("ddMMyyyy");
 
-        for (String textArray1 : textArray) {
+        for (String textData : textArray) {
 
-            textArray1 = textArray1.replace(".", " ").replace("/", " ");
+            String [] personalData = textData.split("/");
+
+            String [] name = personalData[0].split("\\.");
+
+            Person person = new Person(name[0], name[1], LocalDate.parse(personalData[1], formatter), personalData[2]);
 
             personList.add(person);
-
-            System.out.println(textArray1);
+            
         }
+        System.out.println(personList); 
     }
 }
 
 
-/*public String getperson() {
-        return myList.toString();
-
-    }*/
 
 
