@@ -25,7 +25,7 @@ public class Person {
 
         DateTimeFormatter formatter1 = DateTimeFormatter.ofPattern("dd MMM yyyy");
 
-        return "prenume" + prenume + "nume" + nume + "data nasterii" + DataNasterii.format(formatter1) + "locul nasterii" + LoculNasterii;
+        return "\n prenume: " + prenume +" nume: "+ nume + " data nasterii: " + DataNasterii.format(formatter1) + " locul nasterii: " + LoculNasterii;
 
     }
 
